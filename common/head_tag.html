@@ -2,7 +2,7 @@
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
   
   import { registerUnbound } from "discourse-common/lib/helpers";
-  registerUnbound("getRandomBanner", function() {
+  registerUnbound("getRandomBanner", function(params) {
     var str = {{theme-setting 'rotate_banner'}};
     var banners = str.split('|');
 
@@ -12,7 +12,7 @@
     return img;
   });
 
-  <img src={{getRandomBanner}} class="banner-center">
+  <img src={{getRandomBanner "run"}} class="banner-center">
   <ul id="e4-bar" class="e4-container e4-button">
     <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
     <li id="e4-home" title="latest posts"><a href="/latest">New Topics</a></li>
@@ -24,3 +24,4 @@
     <li id="e4-users" title="users page"><a href="/u">Users</a></li>
   </ul>
 </script>
+
