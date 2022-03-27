@@ -1,2 +1,4 @@
-en:
-  default-background: "assets/balls_background.png"
+background_image:
+  type: upload
+  default: "assets/balls_background.png"
+  description: background image for site
