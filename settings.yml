@@ -1,9 +1,13 @@
 background_image:
   type: upload
-  default: "http://i.imgur.com/xAKHu2Q.png"
+  default: "assets/balls_background.png"
   description: background image for site
 
 banner_image:
   type: upload
-  default: NA
+  default: "assets/simple_banner.png"
   description: banner for site
+
+rotate_banner:
+  default: "https://i.imgur.com/ES1JXM3.png|https://i.imgur.com/NefzwFH.png"
+  type: list
