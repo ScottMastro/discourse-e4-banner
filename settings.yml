@@ -1,8 +1,9 @@
 background_image:
   type: upload
-  default: "assets/balls_background.png"
+  default: "http://i.imgur.com/xAKHu2Q.png"
   description: background image for site
 
 banner_image:
   type: upload
+  default: NA
   description: banner for site
