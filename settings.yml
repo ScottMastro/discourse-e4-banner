@@ -13,7 +13,7 @@ rotate_banner:
   type: list
   description: randomly chosen banners
 
-navbar_names:
+navbar_name:
   default: "Home|New Topics|Search|https://i.imgur.com/HSem9g2.png|Users"
   type: list
   description: name (or image) for navigation bar

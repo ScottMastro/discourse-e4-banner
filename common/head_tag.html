@@ -1,43 +1,62 @@
 <script type="text/discourse-plugin" version="0.8">
-    api.onPageChange(() =>{
-        getRandomBanner();
-    });
-    
-    function getRandomBanner() {
-      var str = settings.rotate_banner;
-      var banners = str.split('|');
-      if (banners.length >0) {
-        var num = Math.floor( Math.random() * banners.length);
-        var img = banners[num];
-        console.log(img); 
-        document.getElementById("e4-banner").src = img; 
-      }
+  function getRandomBanner() {
+    var str = settings.rotate_banner;
+    var banners = str.split('|');
+    if (banners.length >0) {
+      var num = Math.floor( Math.random() * banners.length);
+      var img = banners[num];
+      console.log(img); 
+      return img;
     }
+    return settings.banner_image;
+  }
 
-api.modifyClass("component:some-component", {
-  navNames: Ember.computed(function() {
-    return settings.navbar_names.split("|");
-  })
-})
+  api.createWidget("e4-banner", {
+    tagName: "div",
 
+    html() {
+      return  h("img.banner-center", {src: getRandomBanner()})
+    }
+  });
+
+ function isImage(url) {
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+  }
+
+  const h = require("virtual-dom").h; 
+  var strName = settings.navbar_name;
+  var strURL = settings.navbar_location;
+  
+  var names = strName.split('|');
+  var url = strURL.split('|');
+
+  function createNavbarElement(navName, navURL) {
+      
+    if (isImage(navName)){
+      return h('li', 
+        h("a", { href: navURL }, 
+          h("img.e4-button-image", {src: navName})));
+    }
+    
+    return h('li', h("a", { href: navURL }, navName));
+    }
+  
+  api.createWidget("e4-navbar", {
+    tagName: "div.e4-container.e4-button",
+
+    html() {
+      const contents = [];
+      for (let i = 0; i < names.length; i++) {
+        contents.push(createNavbarElement(names[i], url[i]))
+      } 
+      return contents;
+    }
+  });
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
+  {{mount-widget widget="e4-banner"}}
+  {{mount-widget widget="e4-navbar"}}
 
-   <img id="e4-banner" src={{theme-setting 'banner_image'}} class="banner-center">
-   <ul id="e4-bar" class="e4-container e4-button">
-
-    {{#each navNames as |name|}}
-        <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
-    {{/each}}
-    <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
-    <li id="e4-home" title="latest posts"><a href="/latest">New Topics</a></li>
-    <li id="e4-home" title="advanced search"><a href="/search">Search</a></li>
-    <li id="e4-ebay" title="Ebay search">
-      <a href="https://ebay.us/m6Zlvp">
-        <div><img src="https://i.imgur.com/HSem9g2.png"></div>
-      </a></li>
-    <li id="e4-users" title="users page"><a href="/u">Users</a></li>
-  </ul>
 </script>
 
