@@ -13,12 +13,23 @@
         document.getElementById("e4-banner").src = img; 
       }
     }
+
+api.modifyClass("component:some-component", {
+  navNames: Ember.computed(function() {
+    return settings.navbar_names.split("|");
+  })
+})
+
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
 
    <img id="e4-banner" src={{theme-setting 'banner_image'}} class="banner-center">
    <ul id="e4-bar" class="e4-container e4-button">
+
+    {{#each navNames as |name|}}
+        <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
+    {{/each}}
     <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
     <li id="e4-home" title="latest posts"><a href="/latest">New Topics</a></li>
     <li id="e4-home" title="advanced search"><a href="/search">Search</a></li>
