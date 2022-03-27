@@ -1,27 +1,24 @@
-<script type="text/javascript">
-  import { registerUnbound } from "discourse-common/lib/helpers";
-  registerUnbound("sample", function() {
-    console.log("hello");
-    console.log("world");
-    return "this-sample";
-  }
-
-  registerUnbound("getRandomBanner", function() {
-    var str = {{theme-setting 'rotate_banner'}};
-    var banners = str.split('|');
-
-    var num = Math.floor( Math.random() * banners.length);
-    var img = banners[num];
-    console.log(img);
-    return img;
-  });
+<script type="text/discourse-plugin" version="0.8">
+    api.onPageChange(() =>{
+        getRandomBanner();
+    });
+    
+    function getRandomBanner() {
+      var str = {{theme-setting 'rotate_banner'}}
+      var banners = str.split('|');
+      if (banners.length >0) {
+        var num = Math.floor( Math.random() * banners.length);
+        var img = banners[num];
+        console.log(img); 
+        document.getElementById("e4-banner").src = img; 
+      }
+    }
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
-  
-  {{sample}}
 
-  <ul id="e4-bar" class="e4-container e4-button">
+   <img id="e4-banner" src={{theme-setting 'banner_image'}} class="banner-center">
+   <ul id="e4-bar" class="e4-container e4-button">
     <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
     <li id="e4-home" title="latest posts"><a href="/latest">New Topics</a></li>
     <li id="e4-home" title="advanced search"><a href="/search">Search</a></li>
