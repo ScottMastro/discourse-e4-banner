@@ -9,5 +9,5 @@ banner_image:
   description: banner for site
 
 rotate_banner:
-  default: "https://i.imgur.com/ES1JXM3.png|https://i.imgur.com/NefzwFH.png"
+  default: "https://i.imgur.com/ES1JXM3.png|https://i.imgur.com/NefzwFH.png|https://i.imgur.com/ZbN5Fr8.png"
   type: list
