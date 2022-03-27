@@ -9,7 +9,7 @@
     });
     
     function getRandomBanner() {
-      var str = {{theme-setting 'rotate_banner'}}
+      var str = settings.rotate_banner;
       var banners = str.split('|');
       if (banners.length >0) {
         var num = Math.floor( Math.random() * banners.length);
