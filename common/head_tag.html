@@ -5,9 +5,7 @@
   registerUnbound("getRandomBanner", function() {
     var str = {{theme-setting 'rotate_banner'}};
     var banners = str.split('|');
-    if (banners.length < 1) {
-      return {{theme-setting 'banner_image'}};
-    }
+
     var num = Math.floor( Math.random() * banners.length);
     var img = banners[num];
     console.log(img);
