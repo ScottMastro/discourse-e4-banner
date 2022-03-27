@@ -6,8 +6,19 @@ background_image:
 banner_image:
   type: upload
   default: "assets/simple_banner.png"
-  description: banner for site
+  description: default banner for site
 
 rotate_banner:
   default: "https://i.imgur.com/ES1JXM3.png|https://i.imgur.com/NefzwFH.png|https://i.imgur.com/ZbN5Fr8.png"
   type: list
+  description: randomly chosen banners
+
+navbar_names:
+  default: "Home|New Topics|Search|https://ebay.us/m6Zlvp|Users"
+  type: list
+  description: name (or image) for navigation bar
+
+navbar_location:
+  default: "/categories|/latest|/search|https://i.imgur.com/HSem9g2.png|/u"
+  type: list
+  description: URLs for navigation bar 
