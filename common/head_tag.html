@@ -1,4 +1,9 @@
 <script type="text/discourse-plugin" version="0.8">
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
+
     api.onPageChange(() =>{
         getRandomBanner();
     });
@@ -13,10 +18,6 @@
         document.getElementById("e4-banner").src = img; 
       }
     }
-</script>
-
-<script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
-
    <img id="e4-banner" src={{theme-setting 'banner_image'}} class="banner-center">
    <ul id="e4-bar" class="e4-container e4-button">
     <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
