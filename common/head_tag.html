@@ -1,6 +1,4 @@
-
-<script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
-  
+<script type="text/javascript">
   import { registerUnbound } from "discourse-common/lib/helpers";
   registerUnbound("sample", function() {
     console.log("hello");
@@ -17,7 +15,10 @@
     console.log(img);
     return img;
   });
+</script>
 
+<script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
+  
   {{sample}}
 
   <ul id="e4-bar" class="e4-container e4-button">
