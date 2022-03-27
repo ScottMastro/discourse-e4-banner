@@ -2,3 +2,7 @@ background_image:
   type: upload
   default: "assets/balls_background.png"
   description: background image for site
+
+banner_image:
+  type: upload
+  description: banner for site
