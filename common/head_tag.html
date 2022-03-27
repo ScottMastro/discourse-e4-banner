@@ -1,18 +1,20 @@
 <script type="text/javascript">
   function getRandomBanner() {
-    var str = {{theme-setting 'rotate_banner'}}
+    var str = {{theme-setting 'rotate_banner'}};
     var banners = str.split('|');
     if (banners.length < 1) {
-      return {{theme-setting 'banner_image'}}
+      return {{theme-setting 'banner_image'}};
     }
     var num = Math.floor( Math.random() * banners.length);
     var img = banners[num];
-    return img
+    console.log(img);
+    return img;
   }
 </script>
 
+
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
-   <img src="getRandomBanner()" class="banner-center">
+  <script type="text/javascript">document.write('<img src="'+ getRandomBanner()+'" class="banner-center">');</script>
   <ul id="e4-bar" class="e4-container e4-button">
     <li id="e4-home" title="home page"><a href="/categories">Home</a></li>
     <li id="e4-home" title="latest posts"><a href="/latest">New Topics</a></li>
