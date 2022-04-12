@@ -19,10 +19,18 @@
     }
   });
 
- function isImage(url) {
-    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
-  }
 
+  const h = require("virtual-dom").h; 
+
+  
+  api.createWidget("e4-navbar", {
+    tagName: "div.e4-container.e4-button",
+
+    html() {
+      const contents = [];
+      return contents;
+    }
+  });
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner">
