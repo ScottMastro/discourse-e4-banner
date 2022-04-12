@@ -1,8 +1,3 @@
-background_image:
-  type: upload
-  default: "assets/balls_background.png"
-  description: background image for site
-
 banner_image:
   type: upload
   default: "assets/simple_banner.png"
@@ -12,13 +7,3 @@ rotate_banner:
   default: "https://i.imgur.com/ES1JXM3.png|https://i.imgur.com/NefzwFH.png|https://i.imgur.com/ZbN5Fr8.png"
   type: list
   description: randomly chosen banners
-
-navbar_name:
-  default: "Home|New Topics|Search|https://i.imgur.com/WXwuBvs.png|Users"
-  type: list
-  description: name (or image) for navigation bar
-
-navbar_location:
-  default: "/categories|/latest|/search|https://ebay.us/m6Zlvp|/u"
-  type: list
-  description: URLs for navigation bar 
