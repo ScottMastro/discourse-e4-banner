@@ -16,10 +16,10 @@
 
     html() {
       if (api.getCurrentUser() == null){
-         return  h("img.banner-center", {src: settings.banner_image, fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
-
+         //return  h("img.banner-center", {src: settings.banner_image, fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
+         return;      
       }
-      console.log(api.getCurrentUser())
+
       return  h("img.banner-center", {src: getRandomBanner(), fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
     }
   });
