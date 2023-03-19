@@ -16,7 +16,7 @@
 
     html() {
       if (api.getCurrentUser() == null){
-        return;
+         return  h("img.banner-center", {src: "", fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
       }
       console.log(api.getCurrentUser())
       return  h("img.banner-center", {src: getRandomBanner(), fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
