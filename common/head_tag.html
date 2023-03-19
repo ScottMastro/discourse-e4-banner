@@ -15,6 +15,10 @@
     tagName: "div",
 
     html() {
+      if (api.getCurrentUser() != null){
+        return;
+      }
+    
       return  h("img.banner-center", {src: getRandomBanner(), fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
     }
   });
