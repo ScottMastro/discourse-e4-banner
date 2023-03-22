@@ -17,8 +17,8 @@
 
     html() {
       if (api.getCurrentUser() == null){
-         return  h("img.banner-center", {src: "", fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
-         //return;
+         //return  h("img.banner-center", {src: "https://efour-storage.b-cdn.net/efour_banner.png", fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
+         return;
       }
 
       return  h("img.banner-center", {src: getRandomBanner(), fetchpriority: "high", alt: "forum banner", style: "aspect-ratio: 925 / 359 ; width: 100%"})
