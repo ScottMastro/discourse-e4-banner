@@ -1,6 +1,5 @@
 banner_image:
   type: upload
-  default: "assets/simple_banner.png"
   description: default banner for site
 
 rotate_banner:
